@@ -18,11 +18,11 @@ const saltRounds = 10;
 
 // POST /auth/signup  - Creates a new user in the database
 router.post("/signup", (req, res, next) => {
-  const { email, password, name } = req.body;
+  const { email, password, name, walletAddress} = req.body;
 
   // Check if email or password or name are provided as empty strings
-  if (email === "" || password === "" || name === "") {
-    res.status(400).json({ message: "Provide email, password and name" });
+  if (email === "" || password === "" || name === "" || walletAddress === "") {
+    res.status(400).json({ message: "Provide email, password, name, and wallet address" });
     return;
   }
 
@@ -129,3 +129,4 @@ router.get("/verify", isAuthenticated, (req, res, next) => {
 });
 
 module.exports = router;
+
