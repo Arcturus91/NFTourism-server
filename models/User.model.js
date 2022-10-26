@@ -9,14 +9,33 @@ const userSchema = new Schema(
       unique: true,
       lowercase: true,
       trim: true,
+      match: [/^\S+@\S+\.\S+$/, "Please use a valid email address."],
     },
     password: {
       type: String,
       required: [true, "Password is required."],
     },
-    name: {
+
+    role: {
       type: String,
-      required: [true, "Name is required."],
+      enum: ["Admin", "User"],
+      default: "User",
+    },
+    firstName: {
+      type: String,
+      minLength: 1,
+      trim: true,
+      required: true
+    },
+    lastName: {
+      type: String,
+      minLength: 1,
+      trim: true,
+    required: true
+    },
+    imageUrl:  {
+      type: String,
+      default: "https://res.cloudinary.com/dad5dandd/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1664030626/AlpacaExchange/alpacaUserId2_km8k9e.png"
     },
   },
   {
