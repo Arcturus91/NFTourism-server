@@ -5,7 +5,7 @@ const bcryptjs = require("bcryptjs");
 const { clearRes, createJWT } = require("../utils/utils");
 
 exports.signupProcess = (req, res, next) => {
-  const { role, email, password, confirmPassword, ...restUser } = req.body;
+  const { role, email, password, confirmPassword,walletAddress, ...restUser } = req.body;
 
   const regexPassword = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
   if (!regexPassword.test(password)) {
@@ -17,15 +17,15 @@ exports.signupProcess = (req, res, next) => {
       });
   }
 
-  if (!email.length || !password.length || !confirmPassword.length)
+  if (!email.length || !password.length || !confirmPassword.length || !walletAddress.length)
     return res
       .status(400)
-      .json({ errorMessage: "No debes mandar campos vacíos." });
+      .json({ errorMessage: "You cannot send empty fields." });
 
   if (password != confirmPassword) {
     return res
       .status(400)
-      .json({ errorMessage: "La contraseña no son iguales!" });
+      .json({ errorMessage: "Passwords not equal!" });
   }
 
   User.findOne({ email })
@@ -33,13 +33,13 @@ exports.signupProcess = (req, res, next) => {
       if (found)
         return res
           .status(400)
-          .json({ errorMessage: "este correo ya fue tomado" });
+          .json({ errorMessage: "email already in use" });
 
       return bcryptjs
         .genSalt(10)
         .then((salt) => bcryptjs.hash(password, salt))
         .then((hashedPassword) => {
-          return User.create({ email, password: hashedPassword, ...restUser });
+          return User.create({ email, password: hashedPassword,walletAddress, ...restUser });
         })
 
         .then((user) => {

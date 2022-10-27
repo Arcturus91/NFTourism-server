@@ -27,6 +27,12 @@ const userSchema = new Schema(
       trim: true,
       required: true
     },
+    walletAddress:{
+      type: String,
+      required: [true, "Email is required."],
+      unique: true,
+
+    },
     lastName: {
       type: String,
       minLength: 1,
