@@ -3,11 +3,9 @@ const router = require("express").Router();
 const {uploadProcess,addReceipt} = require ("../controllers/upload.controller");
 const uploadCloud = require ("../helpers/cloudinary")
 
-const {getLoggedUser,
-  
-} = require ("../controllers/user.controller");
+const {getLoggedUser,} = require ("../controllers/user.controller");
 
-const {verifyToken,checkWallet,checkRole,checkBankAccount} = require ("../middleware")
+const {verifyToken} = require ("../middleware")
 
 router.get("/my-profile", verifyToken, getLoggedUser)
 
