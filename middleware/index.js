@@ -37,7 +37,7 @@ exports.checkRole = (arrayRoles) => {
     } else {
       res
         .status(401)
-        .json({ errorMessage: "no tienes permiso para realizar esta acción" });
+        .json({ errorMessage: "You dont have rights for doing this!" });
     }
   };
 };
