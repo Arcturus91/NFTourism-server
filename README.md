@@ -1,14 +1,15 @@
 # NFTurist
 
-A NFT for turist in Peru 💰
+A NFT for turists in Peru 💰
 
 ## Features:
 
-- ✍️ Register places visited
-- 📱 Get the user images and convert them to nft
-- 👨‍💼 Includes a button to generate the wallet and another button to link the wallet
-- ✍️ Register user in NFTourist
-- 📈 Certify the user of his visit through an nft
+- ✍️ Register location of places visited by the users 
+- ✍️ Allows them to upload picture as a proof
+- 📱 Such picture will be sent back to the user Phantom Wallet as an NFT
+- 👨‍💼 Includes a button to link the wallet of User and Admin
+- 👑 Admin has the rights to send Solana to User wallets as CashBacks.
+- 📸  Admin can see all pictures Users upload
   > >
 
 ## Routes
@@ -24,22 +25,12 @@ A NFT for turist in Peru 💰
   password: Perro12345
 
 ## Home
-
 ---
-
 ### **get** Home page
 
 ```
 http://localhost:5005/api/
 ```
-
-```
-
----
-
----
-
-\*\*
 
 ## User Routes
 
@@ -96,15 +87,13 @@ http://localhost:5005/api/auth/login
 
 ```
 {
-    firstName:
-    lastName:
-  email: eduardo@nfturistperu.com
-  password: Perro12345
-  confirmPassword: Perro12345
-  walletAddress:HrK7q7MsddzJYztFd59T79FrUt8kQMTbdJxpwzUCTZvQ
+firstName:
+lastName:
+email: eduardo@nfturistperu.com
+password: Perro12345
+confirmPassword: Perro12345
+walletAddress:HrK7q7MsddzJYztFd59T79FrUt8kQMTbdJxpwzUCTZvQ
 }
 ```
 
 ---
-
-
