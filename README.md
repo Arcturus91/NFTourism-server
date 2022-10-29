@@ -17,12 +17,14 @@ A NFT for turists in Peru 💰
 ### **Credentials**
 
 - **Administrator:**
-  email: arturo@gmail.com
-  password: Perro12345
+  email: "arturo@gmail.com",
+  email:Solticket12345
 
 - **Recently registered user:**
-   email: eduardo@nfturistperu.com
-  password: Perro12345
+  email: "eduardo@gmail.com",
+  email:Solticket12345
+
+  
 
 ## Home
 ---
@@ -72,8 +74,8 @@ http://localhost:5005/api/auth/login
 
 ```
 {
- email: arturo@gmail.com
-  password: Perro12345
+email: "arturo@gmail.com",
+  email:Solticket12345
 }
 ```
 
@@ -87,11 +89,11 @@ http://localhost:5005/api/auth/login
 
 ```
 {
-firstName:
-lastName:
-email: eduardo@nfturistperu.com
-password: Perro12345
-confirmPassword: Perro12345
+firstName: eduardo
+lastName: camacho
+email: eduardo@gmail.com
+password: Solticket12345
+confirmPassword: Solticket12345
 walletAddress:HrK7q7MsddzJYztFd59T79FrUt8kQMTbdJxpwzUCTZvQ
 }
 ```
