@@ -10,6 +10,7 @@ A NFT for turists in Peru 💰
 - 👨‍💼 Includes a button to link the wallet of User and Admin
 - 👑 Admin has the rights to send Solana to User wallets as CashBacks.
 - 📸  Admin can see all pictures Users upload
+- 💻 You can test the app as an administrator in [NFTurism Heroku App](https://soltickets.herokuapp.com/)
   > >
 
 ## Routes
